@@ -11,8 +11,11 @@ const config: Config = {
     v4: true,
   },
 
-  url: 'https://nitzap-docs.datago.com.br',
-  baseUrl: '/',
+  url: 'https://datago-dev.github.io',
+  baseUrl: '/docs/',
+
+  organizationName: 'DataGo-Dev',
+  projectName: 'docs',
 
   onBrokenLinks: 'warn',
 
