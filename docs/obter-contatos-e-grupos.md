@@ -8,7 +8,9 @@ Para obter Contatos e Grupos usaremos os métodos da pasta **Gets** dentro da no
 
 ![Pasted image 20250923144852.png](./img/Pasted%20image%2020250923144852.png)
 
-> ⚠️ Após conectar, os contatos/grupos podem demorar até 1 minuto para serem gravados no Nitzap.
+:::info[Nota]
+Após conectar, os contatos/grupos podem demorar até 1 minuto para serem gravados no Nitzap.
+:::
 
 ### Grupos
 
@@ -56,7 +58,9 @@ Use **GET Contatos** para obter dados de Contatos:
 ]
 ```
 
-> ⚠️ A lista de contatos só vai exibir 500 contatos a fim de desempenho.
+:::warning[Atenção]
+A lista de contatos só vai exibir 500 contatos a fim de desempenho.
+:::
 
 Para buscar por um contato em toda a sua lista, use o parâmetro **term**:
 

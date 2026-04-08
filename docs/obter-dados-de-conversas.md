@@ -74,7 +74,9 @@ Para paginação sem furar dados, use:
 
 Você pode usar [esse site](https://www.unixtimestamp.com/) para converter data para timestamp.
 
-> Nota: seu timestamp deve ter 13 dígitos. Caso o site lhe der apenas com 10 dígitos, acrescente 3 zeros ao final (ex: `1758576856000`)
+:::info[Nota]
+Seu timestamp deve ter 13 dígitos. Caso o site lhe der apenas com 10 dígitos, acrescente 3 zeros ao final (ex: `1758576856000`).
+:::
 
 **Extra — Ver mensagens de outros usuários**
 
@@ -161,7 +163,9 @@ Página 3:
 }
 ```
 
-> ⚠️ Não utilize take maior que 500 para evitar travar o banco.
+:::danger[Cuidado]
+Não utilize take maior que 500 para evitar travar o banco.
+:::
 
 ### Histórico de Mensagens num período de tempo
 
@@ -177,7 +181,9 @@ Também é possível acessar as mensagens de um certo período com timestamp ini
 }
 ```
 
-> ⚠️ Não utilize take maior que 500 para evitar travar o banco.
+:::danger[Cuidado]
+Não utilize take maior que 500 para evitar travar o banco.
+:::
 
 | Parâmetro | Descrição |
 | --- | --- |
@@ -188,7 +194,9 @@ Também é possível acessar as mensagens de um certo período com timestamp ini
 
 Você pode usar [esse site](https://www.unixtimestamp.com/) para converter data para timestamp.
 
-> Nota: seu timestamp deve ter 13 dígitos. Caso o site lhe der apenas com 10 dígitos, acrescente 3 zeros ao final (ex: `1758576856000`)
+:::info[Nota]
+Seu timestamp deve ter 13 dígitos. Caso o site lhe der apenas com 10 dígitos, acrescente 3 zeros ao final (ex: `1758576856000`).
+:::
 
 As mensagens resultarão no mesmo corpo mencionado acima, porém ordenadas por data em ordem **crescente**.
 

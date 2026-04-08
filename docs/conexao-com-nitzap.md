@@ -30,7 +30,9 @@ Ao Enviar a requisição você obterá um código:
 
 Se optar por QR CODE, você deve enviar a requisição e copiar o link completo da resposta e colar no seu navegador. Dessa forma o QR Code será exibido pra você.
 
-> ⚠️ O QR code vale por 40 segundos, logo é necessário lê-lo rapidamente
+:::warning[Atenção]
+O QR code vale por 40 segundos, logo é necessário lê-lo rapidamente.
+:::
 
 `{{host}}/whatsapp/connect/{{numberConnect}}`
 
@@ -54,4 +56,6 @@ Apenas enviando a requisição o Postman vai automaticamente guardar suas creden
 
 Logo em seguida deve-se apenas clicar em **POST Login** e o Postman vai automaticamente gerar o token de acesso para ser capaz de usar os outros métodos da API.
 
-> ⚠️ O Token de acesso vale por **1 Hora**. Todas as vezes que o token expirar, será necessário clicar novamente em **POST Login** para continuar usando os outros métodos.
+:::warning[Atenção]
+O Token de acesso vale por **1 Hora**. Todas as vezes que o token expirar, será necessário clicar novamente em **POST Login** para continuar usando os outros métodos.
+:::

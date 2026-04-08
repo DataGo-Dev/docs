@@ -51,6 +51,10 @@ const config: Config = {
     },
     navbar: {
       title: 'Nitzap API Docs',
+      logo: {
+        alt: 'Nitzap Logo',
+        src: 'img/logo.svg',
+      },
       style: 'dark',
       items: [
         {

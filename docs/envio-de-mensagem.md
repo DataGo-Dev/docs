@@ -8,7 +8,9 @@ Para envio de mensagens usaremos os métodos da pasta **Send** dentro da nossa *
 
 ![Pasted image 20250923102905.png](./img/Pasted%20image%2020250923102905.png)
 
-> ⚠️ Para enviar mensagem, é necessário obter o token de acesso mencionado em [Conexão com Nitzap](./conexao-com-nitzap.md)
+:::warning[Pré-requisito]
+Para enviar mensagem, é necessário obter o token de acesso mencionado em [Conexão com Nitzap](./conexao-com-nitzap.md).
+:::
 
 ### Enviar Mensagem de Texto
 
@@ -79,9 +81,13 @@ O tipo `document` tem algumas particularidades:
 
 O parâmetro **fileName** deve ser enviado em `media.fileName`. Ele é responsável por nomear o arquivo do link enviado.
 
-> ⚠️ O Nitzap não irá hospedar os arquivos (imagens/vídeos/áudios/documentos) que não são de origem do Bucket S3 do Nitzap. Se as URLs dos arquivos não estiverem disponíveis em algum momento, elas também ficarão indisponíveis no Aplicativo do Nitzap no Salesforce.
+:::warning[Hospedagem de Arquivos]
+O Nitzap não irá hospedar os arquivos (imagens/vídeos/áudios/documentos) que não são de origem do Bucket S3 do Nitzap. Se as URLs dos arquivos não estiverem disponíveis em algum momento, elas também ficarão indisponíveis no Aplicativo do Nitzap no Salesforce.
+:::
 
-> ⚠️ É altamente recomendado que todos os arquivos enviados por API sejam hospedados em apenas um único site, pois essas URLs deverão ser liberadas em URLs confiáveis no Salesforce — [Gerenciar URLs confiáveis](https://help.salesforce.com/s/articleView?id=xcloud.security_trusted_urls_manage.htm&type=5) — para ser compatível com o Aplicativo Nitzap 2.0 no Salesforce.
+:::tip[Recomendação]
+É altamente recomendado que todos os arquivos enviados por API sejam hospedados em apenas um único site, pois essas URLs deverão ser liberadas em URLs confiáveis no Salesforce — [Gerenciar URLs confiáveis](https://help.salesforce.com/s/articleView?id=xcloud.security_trusted_urls_manage.htm&type=5) — para ser compatível com o Aplicativo Nitzap 2.0 no Salesforce.
+:::
 
 ### Sussurro
 
@@ -97,7 +103,9 @@ Para isso use **POST Supress Message**:
 }
 ```
 
-> ⚠️ Mensagens de sussurro não são compatíveis com mídias.
+:::warning[Atenção]
+Mensagens de sussurro não são compatíveis com mídias.
+:::
 
 ### Envio em Massa
 

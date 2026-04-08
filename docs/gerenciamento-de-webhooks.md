@@ -6,7 +6,9 @@ sidebar_position: 8
 
 Para gerenciar os webhooks usaremos os métodos da pasta **Webhooks** dentro da nossa **Collection**, importada em [Postman Collection e Configuração](./postman-collection-e-configuracao.md)
 
-> Para usar as funções de gerenciamento Webhook, você deve ter acesso à sua chave de [Autenticação Master](./autenticacao-master.md)
+:::warning[Pré-requisito]
+Para usar as funções de gerenciamento Webhook, você deve ter acesso à sua chave de [Autenticação Master](./autenticacao-master.md).
+:::
 
 ![Pasted image 20250923150933.png](./img/Pasted%20image%2020250923150933.png)
 
