@@ -13,6 +13,7 @@ Documentação oficial para uso da API do Nitzap.
 | 3 | [Envio de Mensagem](./envio-de-mensagem.md) | Enviar textos, mídias, sussurros e envio em massa |
 | 4 | [Obter Dados de Conversas](./obter-dados-de-conversas.md) | Metadados, histórico de mensagens e fotos de perfil |
 | 5 | [Obter Contatos e Grupos](./obter-contatos-e-grupos.md) | Listar contatos e grupos do WhatsApp |
-| 6 | [Apagar uma conversa](./apagar-uma-conversa.md) | Deletar conversas e metadados |
-| 7 | [Gerenciamento de Webhooks](./gerenciamento-de-webhooks.md) | Criar, listar e deletar webhooks |
-| 8 | [Autenticação Master](./autenticacao-master.md) | Credenciais de acesso administrativo |
+| 6 | [Buscar Ocorrências de Eventos](./buscar-ocorrencias-de-eventos.md) | Chamadas e visualizações únicas por período |
+| 7 | [Apagar uma conversa](./apagar-uma-conversa.md) | Deletar conversas e metadados |
+| 8 | [Gerenciamento de Webhooks](./gerenciamento-de-webhooks.md) | Criar, listar e deletar webhooks |
+| 9 | [Autenticação Master](./autenticacao-master.md) | Credenciais de acesso administrativo |

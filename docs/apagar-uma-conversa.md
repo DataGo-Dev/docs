@@ -1,7 +1,7 @@
 ---
 id: apagar-uma-conversa
 title: Apagar uma conversa
-sidebar_position: 7
+sidebar_position: 8
 ---
 
 Para apagar uma conversa usaremos os métodos da pasta **Danger** dentro da nossa **Collection**, importada em [Postman Collection e Configuração](./postman-collection-e-configuracao.md)

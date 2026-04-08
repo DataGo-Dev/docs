@@ -1,7 +1,7 @@
 ---
 id: gerenciamento-de-webhooks
 title: Gerenciamento de Webhooks
-sidebar_position: 8
+sidebar_position: 9
 ---
 
 Para gerenciar os webhooks usaremos os métodos da pasta **Webhooks** dentro da nossa **Collection**, importada em [Postman Collection e Configuração](./postman-collection-e-configuracao.md)

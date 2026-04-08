@@ -1,7 +1,7 @@
 ---
 id: autenticacao-master
 title: Autenticação Master
-sidebar_position: 9
+sidebar_position: 10
 ---
 
 ### Credenciais Mestre
