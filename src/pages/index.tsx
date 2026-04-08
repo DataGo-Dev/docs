@@ -15,37 +15,37 @@ const features: FeatureItem[] = [
     icon: '🔗',
     title: 'Conexão Rápida',
     description: 'Conecte seu WhatsApp via QR Code ou Pair Code em poucos minutos.',
-    link: '/docs/conexao-com-nitzap',
+    link: '/conexao-com-nitzap',
   },
   {
     icon: '💬',
     title: 'Envio de Mensagens',
     description: 'Envie textos, imagens, vídeos, áudios e documentos via API.',
-    link: '/docs/envio-de-mensagem',
+    link: '/envio-de-mensagem',
   },
   {
     icon: '📊',
     title: 'Dados de Conversas',
     description: 'Acesse metadados, histórico de mensagens e fotos de perfil.',
-    link: '/docs/obter-dados-de-conversas',
+    link: '/obter-dados-de-conversas',
   },
   {
     icon: '🌎',
     title: 'Webhooks',
     description: 'Receba eventos em tempo real como mensagens e atualizações de conexão.',
-    link: '/docs/gerenciamento-de-webhooks',
+    link: '/gerenciamento-de-webhooks',
   },
   {
     icon: '🔡',
     title: 'Contatos e Grupos',
     description: 'Liste contatos salvos e grupos do WhatsApp conectado.',
-    link: '/docs/obter-contatos-e-grupos',
+    link: '/obter-contatos-e-grupos',
   },
   {
     icon: '🔐',
     title: 'Autenticação Master',
     description: 'Acesse funções avançadas com credenciais de administrador.',
-    link: '/docs/autenticacao-master',
+    link: '/autenticacao-master',
   },
 ];
 
@@ -77,12 +77,12 @@ export default function Home(): ReactNode {
           <div className="hero-buttons">
             <Link
               className="button button--primary button--lg"
-              to="/docs/documentacao-da-api">
+              to="/documentacao-da-api">
               Começar agora
             </Link>
             <Link
               className="button button--secondary button--lg"
-              to="/docs/postman-collection-e-configuracao">
+              to="/postman-collection-e-configuracao">
               Configurar Postman
             </Link>
           </div>

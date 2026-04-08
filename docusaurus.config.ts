@@ -34,7 +34,7 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
-          routeBasePath: 'docs',
+          routeBasePath: '/',
         },
         blog: false,
         theme: {
@@ -69,15 +69,15 @@ const config: Config = {
           items: [
             {
               label: 'Começar',
-              to: '/docs/documentacao-da-api',
+              to: '/documentacao-da-api',
             },
             {
               label: 'Conexão',
-              to: '/docs/conexao-com-nitzap',
+              to: '/conexao-com-nitzap',
             },
             {
               label: 'Envio de Mensagem',
-              to: '/docs/envio-de-mensagem',
+              to: '/envio-de-mensagem',
             },
           ],
         },
@@ -86,15 +86,15 @@ const config: Config = {
           items: [
             {
               label: 'Webhooks',
-              to: '/docs/gerenciamento-de-webhooks',
+              to: '/gerenciamento-de-webhooks',
             },
             {
               label: 'Contatos e Grupos',
-              to: '/docs/obter-contatos-e-grupos',
+              to: '/obter-contatos-e-grupos',
             },
             {
               label: 'Autenticação Master',
-              to: '/docs/autenticacao-master',
+              to: '/autenticacao-master',
             },
           ],
         },
