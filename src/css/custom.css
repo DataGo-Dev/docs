@@ -1,0 +1,204 @@
+:root {
+  --ifm-color-primary: #128C7E;
+  --ifm-color-primary-dark: #107a6e;
+  --ifm-color-primary-darker: #0f7368;
+  --ifm-color-primary-darkest: #0c5f56;
+  --ifm-color-primary-light: #149e8e;
+  --ifm-color-primary-lighter: #15a594;
+  --ifm-color-primary-lightest: #18bfab;
+
+  --ifm-code-font-size: 95%;
+  --ifm-font-family-base: 'Inter', system-ui, -apple-system, sans-serif;
+  --ifm-heading-font-weight: 700;
+  --ifm-font-weight-bold: 600;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+
+  --ifm-navbar-background-color: #075E54;
+  --ifm-navbar-link-color: #ffffff;
+  --ifm-navbar-link-hover-color: #25D366;
+
+  --ifm-global-radius: 0.5rem;
+  --ifm-code-border-radius: 0.4rem;
+}
+
+[data-theme='dark'] {
+  --ifm-color-primary: #25D366;
+  --ifm-color-primary-dark: #20c45c;
+  --ifm-color-primary-darker: #1eba57;
+  --ifm-color-primary-darkest: #189a47;
+  --ifm-color-primary-light: #3dd975;
+  --ifm-color-primary-lighter: #47dc7c;
+  --ifm-color-primary-lightest: #64e291;
+
+  --ifm-background-color: #0b1014;
+  --ifm-background-surface-color: #111b21;
+  --ifm-navbar-background-color: #111b21;
+  --ifm-footer-background-color: #0b1014;
+
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.navbar {
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.15);
+}
+
+.navbar__title {
+  font-weight: 700;
+  font-size: 1.15rem;
+  letter-spacing: -0.02em;
+}
+
+article {
+  max-width: 52rem;
+}
+
+.markdown h3 {
+  margin-top: 2rem;
+}
+
+.markdown code {
+  padding: 0.15rem 0.4rem;
+  border-radius: 0.3rem;
+}
+
+.markdown pre {
+  border-radius: 0.6rem;
+  border: 1px solid var(--ifm-color-emphasis-200);
+}
+
+[data-theme='dark'] .markdown pre {
+  background-color: #0d1117;
+  border-color: #21262d;
+}
+
+.footer {
+  border-top: 1px solid var(--ifm-color-emphasis-200);
+}
+
+[data-theme='dark'] .footer {
+  border-top-color: #21262d;
+}
+
+.hero--nitzap {
+  background: linear-gradient(135deg, #075E54 0%, #128C7E 50%, #25D366 100%);
+  color: #fff;
+  padding: 5rem 2rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero--nitzap::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at 30% 70%, rgba(37, 211, 102, 0.15) 0%, transparent 50%),
+              radial-gradient(circle at 70% 30%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.hero--nitzap h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  margin-bottom: 0.75rem;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.hero--nitzap p {
+  font-size: 1.3rem;
+  opacity: 0.92;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  font-weight: 400;
+}
+
+.feature-card {
+  background: var(--ifm-background-surface-color);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 1rem;
+  padding: 2rem;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  height: 100%;
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+}
+
+[data-theme='dark'] .feature-card {
+  border-color: #21262d;
+}
+
+[data-theme='dark'] .feature-card:hover {
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+  border-color: var(--ifm-color-primary);
+}
+
+.feature-card .feature-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.feature-card h3 {
+  font-size: 1.15rem;
+  margin-bottom: 0.5rem;
+}
+
+.feature-card p {
+  font-size: 0.95rem;
+  color: var(--ifm-color-emphasis-700);
+  margin: 0;
+  line-height: 1.6;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.hero-buttons .button {
+  font-weight: 600;
+  font-size: 1.05rem;
+  padding: 0.75rem 2rem;
+  border-radius: 0.6rem;
+}
+
+.hero-buttons .button--secondary {
+  background: rgba(255, 255, 255, 0.15);
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  color: #fff;
+  backdrop-filter: blur(4px);
+}
+
+.hero-buttons .button--secondary:hover {
+  background: rgba(255, 255, 255, 0.25);
+  border-color: rgba(255, 255, 255, 0.6);
+  color: #fff;
+}
+
+@media screen and (max-width: 768px) {
+  .hero--nitzap {
+    padding: 3rem 1.5rem;
+  }
+
+  .hero--nitzap h1 {
+    font-size: 2rem;
+  }
+
+  .hero--nitzap p {
+    font-size: 1.1rem;
+  }
+}

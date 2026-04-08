@@ -1,0 +1,1725 @@
+{
+	"info": {
+		"_postman_id": "e621cee7-827c-4e9a-9115-b5a69c4ebe52",
+		"name": "0 Nitzap",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10390031",
+		"_collection_link": "https://datago-team.postman.co/workspace/Datago-Team~6e40ae4b-a635-43c2-b9c7-d94f924457fa/collection/10390031-e621cee7-827c-4e9a-9115-b5a69c4ebe52?action=share&source=collection_link&creator=10390031"
+	},
+	"item": [
+		{
+			"name": "Connect",
+			"item": [
+				{
+					"name": "Connect",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"var sessionId = jsonData.sessionId;",
+									"",
+									"// Define o token como uma variável de coleção",
+									"pm.environment.set(\"sessionId\", sessionId);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/whatsapp/connect/{{numberConnect}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"whatsapp",
+								"connect",
+								"{{numberConnect}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Connect Pair Code",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"var sessionId = jsonData.sessionId;",
+									"",
+									"// Define o token como uma variável de coleção",
+									"pm.environment.set(\"sessionId\", sessionId);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/whatsapp/connect/{{numberConnect}}?useCode=true",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"whatsapp",
+								"connect",
+								"{{numberConnect}}"
+							],
+							"query": [
+								{
+									"key": "useCode",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Status [Secret]",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"var secret = jsonData.secret;",
+									"",
+									"// Define o token como uma variável de coleção",
+									"if(secret != 'crypt'){",
+									"  pm.environment.set(\"secret\", secret);",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-User-ID",
+								"value": "{{X-User-ID}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/whatsapp/status/{{sessionId}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"whatsapp",
+								"status",
+								"{{sessionId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"var secret = jsonData.sessionToken;",
+									"",
+									"// Define o token como uma variável de coleção",
+									"pm.environment.set(\"tokenNitzap\", secret);",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-User-ID",
+								"value": "{{X-User-ID}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"{{numberConnect}}\",\n    \"password\": \"{{secret}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/whatsapp/login",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"whatsapp",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login Master",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"var secret = jsonData.sessionToken;",
+									"",
+									"// Define o token como uma variável de coleção",
+									"pm.environment.set(\"tokenNitzap\", secret);",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-User-ID",
+								"value": "{{X-User-ID}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"e6be5989-d1a2-4964-a52c-865453e87b2a\",\n    \"password\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/whatsapp/login",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"whatsapp",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Send",
+			"item": [
+				{
+					"name": "Supress Mesage",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{tokenNitzap}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"to\": \"{{destination}}\",\n    \"message\" : \"Teste Nitzap\",\n    \"type\" : \"text\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/whatsapp/supress-message",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"whatsapp",
+								"supress-message"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Text",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{tokenNitzap}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\n    \"to\": \"{{destination}}\",\n    \"message\" : \"OLAAAAAA\",\n    \"type\" : \"text\"\n    // \"isForwarded\": true,\n    // \"quotedMessageKey\": \"3EB06FD423427B8207423D\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/whatsapp/send-message",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"whatsapp",
+								"send-message"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Image",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{tokenNitzap}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"to\": \"{{destination}}\",\n    \"message\" : \"jdlksajdasjdlkasjdskl\",\n    \"type\" : \"image\",\n    \"isForwarded\": false,\n    // \"quotedMessageKey\": \"3EB0EF9E314E8369B2DF01\",\n    \"media\" : {\n        \"url\" : \"https://nitzap2private.s3.us-east-1.amazonaws.com/m_files/178.156.164.202/5514981770936/3a9ed1ca-6102-4f1e-993e-770e379c7656/image/ee778167-ed4f-4a83-98bf-4c82e1fd8953.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Checksum-Mode=ENABLED&X-Amz-Credential=AKIAQ6XACXRNLAETGYVY%2F20250904%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250904T122639Z&X-Amz-Expires=7200&X-Amz-SignedHeaders=host&x-id=GetObject&X-Amz-Signature=73a3dac5d8d692753db7565d22582686090bd6004afe1ee0fbc9176b825a8c9b\",  \n        \"mimetype\": \"image/png\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/whatsapp/send-message",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"whatsapp",
+								"send-message"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Video",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{tokenNitzap}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"to\": \"{{destination}}\",\n    \"message\" : \"Vivamus vel varius ante.\",\n    \"type\" : \"video\",\n    \"quotedMessageKey\": \"3EB0EF9E314E8369B2DF01\",\n    \"media\" : {\n        \"url\" : \"https://nitzap2.s3.us-east-1.amazonaws.com/m_files/177.74.234.48/5514981770936/3c5ddd8c-8395-443c-a4f7-e9d9321e1016/video/fe189374-f655-4872-b859-3f9ba86c99a0/ab60fa18-d697-4a7e-9150-b13d02c775cc.mp4\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/whatsapp/send-message",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"whatsapp",
+								"send-message"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Audio",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{tokenNitzap}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"to\": \"{{destination}}\",\n    \"type\" : \"audio\",\n    // \"quotedMessageKey\": \"3EB0EF9E314E8369B2DF01\",\n    \"media\" : {\n        \"url\" : \"https://nitzap2.s3.us-east-1.amazonaws.com/sf_files/datago-8b-dev-ed/5514981770936/audio/1749838801605.ogg\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/whatsapp/send-message",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"whatsapp",
+								"send-message"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Audio Copy",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{tokenNitzap}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"to\": \"{{destination}}\",\n    \"type\" : \"audio\",\n    // \"quotedMessageKey\": \"3EB0EF9E314E8369B2DF01\",\n    \"media\" : {\n        \"url\" : \"https://nitzap2private.s3.us-east-1.amazonaws.com/sf_files/public/Video%20from%20V4%20Company.webm\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/whatsapp/send-message",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"whatsapp",
+								"send-message"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Document",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{tokenNitzap}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"to\": \"{{destination}}\",\n    \"message\" : \"Curabitur\",\n    \"quotedMessageKey\": \"3EB0EF9E314E8369B2DF01\",\n    \"media\" : {\n        \"fileName\": \"helloFileName.html\",\n        \"url\": \"https://nitzap2.s3.us-east-1.amazonaws.com/b_files/178.156.147.195/5514981770936/55e2eaad-1a63-4478-a2a2-38462aa9879c/sent/document/7b1a3406-28a8-4920-84cc-90a7a17173f8.html\"\n    },\n    \"type\" : \"document\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/whatsapp/send-message",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"whatsapp",
+								"send-message"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Massa",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{tokenNitzap}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n    {\n        \"type\": \"text\",\n        \"to\": \"5527997019622\",\n        \"message\": \"🚀 Novo Lead\\n\\n*Empresa:* Pedro Lorenzoni Sorriso Teste\\n*Nome:* Pedro Lead Teste Datago\\n*Celular:* 5527992617227\\n*Email:* gmmcontabil@gmail.com\\n\\nhttps://datago.lightning.force.com/lightning/r/Lead/00QN500000bwjNdMAI/view\\n\\n📲 Nitzap by Datago\",\n        \"media\": null,\n        \"delay\": 7.0\n    }\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/whatsapp/send-multiples",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"whatsapp",
+								"send-multiples"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Gets",
+			"item": [
+				{
+					"name": "Fetch Contact Logs",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{tokenNitzap}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/whatsapp/fetch-contacts",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"whatsapp",
+								"fetch-contacts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Check Number",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{tokenNitzap}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/whatsapp/check-number?number=5511946600446",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"whatsapp",
+								"check-number"
+							],
+							"query": [
+								{
+									"key": "number",
+									"value": "5511946600446"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Check On Whatsapp",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{tokenNitzap}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\"5511946600446\", \"551146600446\"]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/whatsapp/check-is-on-whatsapp",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"whatsapp",
+								"check-is-on-whatsapp"
+							],
+							"query": [
+								{
+									"key": "number",
+									"value": "551146600446",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Profile Picture",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{tokenNitzap}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/whatsapp/getprofilephoto?target=+55 27 99997-0208",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"whatsapp",
+								"getprofilephoto"
+							],
+							"query": [
+								{
+									"key": "target",
+									"value": "{{destination}}",
+									"disabled": true
+								},
+								{
+									"key": "target",
+									"value": "120363248889286692@g.us",
+									"disabled": true
+								},
+								{
+									"key": "target",
+									"value": "+55 27 99997-0208"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Grupos",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{tokenNitzap}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/whatsapp/mygroups",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"whatsapp",
+								"mygroups"
+							],
+							"query": [
+								{
+									"key": "force",
+									"value": "true",
+									"disabled": true
+								},
+								{
+									"key": "target",
+									"value": "120363248889286692@g.us",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Contatos",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{tokenNitzap}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/whatsapp/mycontacts",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"whatsapp",
+								"mycontacts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "My Chats MTD",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{tokenNitzap}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/whatsapp/get-my-chats-metadata",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"whatsapp",
+								"get-my-chats-metadata"
+							],
+							"query": [
+								{
+									"key": "take",
+									"value": "1",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Generate Maser Key",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{tokenNitzap}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Master-Key",
+								"value": "{{masterKey}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/whatsapp/generate-master-key",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"whatsapp",
+								"generate-master-key"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Messages",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{tokenNitzap}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Master-Key",
+								"value": "{{masterKey}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"target\": \"{{destination}}\",\n    \"skip\": 0,\n    \"take\": 100\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/whatsapp/get-messages",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"whatsapp",
+								"get-messages"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Range Messages",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{tokenNitzap}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-User-ID",
+								"value": "{{X-User-ID}}",
+								"type": "text"
+							},
+							{
+								"key": "X-Master-Key",
+								"value": "{{masterKey}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"target\": \"{{destination}}\",\n    \"sequence\": \"1754452800000\",\n    \"finalSequence\": \"1754442068000\",\n    \"skip\": 0,\n    \"take\": 50\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/whatsapp/get-range-messages",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"whatsapp",
+								"get-range-messages"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Summary",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{tokenNitzap}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-User-ID",
+								"value": "{{X-User-ID}}",
+								"type": "text"
+							},
+							{
+								"key": "X-Master-Key",
+								"value": "{{masterKey}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n    {\n        \"referenceId\": \"iasjdiajsdiasjdi\",\n        \"vFrom\": \"{{destination}}\",\n        \"to\": \"5511982261102\",\n        \"sequence\": \"1749060109545\",\n        \"finalSequence\": \"1757681337000\"\n    }\n]\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/whatsapp/get-summary",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"whatsapp",
+								"get-summary"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "S3 Presigned URL",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{tokenNitzap}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"key\": \"path/test.png\",\n    \"mimetipe\": \"image/png\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/whatsapp/s3/generate-presigned-url",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"whatsapp",
+								"s3",
+								"generate-presigned-url"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Chats MTD",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{tokenNitzap}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"where\": \"sequence >= 1755050400000 AND sequence < 1755309600000 AND chat_id LIKE '%5527999970208%' AND secondwhatsappid NOT LIKE '%@g.us%'\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/whatsapp/get-chats-metadata",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"whatsapp",
+								"get-chats-metadata"
+							],
+							"query": [
+								{
+									"key": "take",
+									"value": "1",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "on",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"3306c313-0bb1-4c67-8bda-2dd4dc49b181\",\n    \"password\": \"004c2c4f-36c4-4039-b624-7aefdb3c6051\"\n}"
+						},
+						"url": {
+							"raw": "{{host}}/whatsapp/on",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"whatsapp",
+								"on"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Who Talked",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{tokenNitzap}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Master-Key",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"target\": \"{{destination}}\",\n    \"skip\": 0,\n    \"take\": 100\n}"
+						},
+						"url": {
+							"raw": "{{host}}/whatsapp/get-who-talked?number=5527997019622",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"whatsapp",
+								"get-who-talked"
+							],
+							"query": [
+								{
+									"key": "number",
+									"value": "5527997019622"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Danger",
+			"item": [
+				{
+					"name": "Delete Chat",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{tokenNitzap}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/whatsapp/delete-messages?target=55 27 997019622",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"whatsapp",
+								"delete-messages"
+							],
+							"query": [
+								{
+									"key": "target",
+									"value": "55 27 997019622"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Query",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{tokenNitzap}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Master-Key",
+								"value": "{{masterKey}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"query\": \"select * from messages where secondwhatsappid like '%9968154%' order by sequence desc limit 10 \"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/whatsapp/execute-query",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"whatsapp",
+								"execute-query"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "SSE",
+			"item": [
+				{
+					"name": "New Messages",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/whatsapp/new-messages?target=552797019622&token={{tokenNitzap}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"whatsapp",
+								"new-messages"
+							],
+							"query": [
+								{
+									"key": "target",
+									"value": "552797019622"
+								},
+								{
+									"key": "token",
+									"value": "{{tokenNitzap}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Chats Update",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/whatsapp/chats-update?token={{tokenNitzap}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"whatsapp",
+								"chats-update"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{tokenNitzap}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Proxy",
+			"item": [
+				{
+					"name": "Proxy",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-User-ID",
+								"value": "postman",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"{{numberConnect}}\",\n    \"password\": \"{{secret}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8090/whatsapp/status/e56a5819-04c0-404c-82b2-37ded5a50ca1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"whatsapp",
+								"status",
+								"e56a5819-04c0-404c-82b2-37ded5a50ca1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Proxy Copy",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-User-ID",
+								"value": "postman5",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"{{numberConnect}}\",\n    \"password\": \"{{secret}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/whatsapp/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"whatsapp",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Manager",
+			"item": [
+				{
+					"name": "Delete Message",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{tokenNitzap}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"to\": \"{{destination}}\",\n    \"type\" : \"audio\",\n    // \"quotedMessageKey\": \"3EB0EF9E314E8369B2DF01\",\n    \"media\" : {\n        \"url\" : \"https://nitzap2.s3.us-east-1.amazonaws.com/sf_files/datago-8b-dev-ed/5514981770936/audio/1749838801605.ogg\"\n    }\n}"
+						},
+						"url": {
+							"raw": "{{host}}/whatsapp/revoke-message?msgId=898db8de-2ddf-4e22-a039-9bfdac099995",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"whatsapp",
+								"revoke-message"
+							],
+							"query": [
+								{
+									"key": "msgId",
+									"value": "898db8de-2ddf-4e22-a039-9bfdac099995"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Message",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{tokenNitzap}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"msgId\": \"2cc9ee8f-9de2-4bfc-8ed4-d39c00d92abe\",\n    \"text\": \"edited\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/whatsapp/edit-message",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"whatsapp",
+								"edit-message"
+							],
+							"query": [
+								{
+									"key": "msgId",
+									"value": "898db8de-2ddf-4e22-a039-9bfdac099995",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Webhooks",
+			"item": [
+				{
+					"name": "Create/Update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{tokenNitzap}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-User-ID",
+								"value": "{{X-User-ID}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": " {\n        \"id\": \"1968\",\n        \"name\": \"\",\n        \"is_active\": false,\n        \"url\": \"https://test-webhook-ia.onrender.com/webhook\",\n        \"secret\": \"543f40f3-ac70-49ac-b632-8e35d0f0df8c\",\n        \"events\": [\n            \"CONNECTION_UPDATE\",\n            \"ON_MESSAGE\",\n            \"MESSAGE_UPDATE\"\n        ],\n        \"tracked_users\": [\n            \"5514981770936\"\n        ]\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/webhook/post",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"webhook",
+								"post"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{tokenNitzap}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-User-ID",
+								"value": "{{X-User-ID}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/webhook/get",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"webhook",
+								"get"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Allowed Events",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{tokenNitzap}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-User-ID",
+								"value": "{{X-User-ID}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"9b3084c2-cd85-46ec-9e1a-4a64632c3a7b\",\n\t\"url\": \"https://webhook.site/06908a4f-ec4c-476d-9267-c2f78ede776e\",\n\t\"secret\": \"123\",\n\t\"events\": [\"CONNECTION_UPDATE\", \"ON_MESSAGE_UPDATE\", \"MESSAGE_UPDATE\"],\n\t\"tracked_users\": [\"5514981770936\"]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/webhook/allowed-events",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"webhook",
+								"allowed-events"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{tokenNitzap}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "X-User-ID",
+								"value": "{{X-User-ID}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/webhook/delete/873341a9-1af4-44a4-a505-f759ec84648e",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"webhook",
+								"delete",
+								"873341a9-1af4-44a4-a505-f759ec84648e"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Update Chats MTD",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{tokenNitzap}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"chat_id\": \"5514981770936_5527997019622\",\n    \"archived\" : true,\n    \"data\" : {\n        \"a\": \"b\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/whatsapp/update-chat-metadata",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"whatsapp",
+						"update-chat-metadata"
+					],
+					"query": [
+						{
+							"key": "take",
+							"value": "1",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "host",
+			"value": ""
+		},
+		{
+			"key": "numberConnect",
+			"value": "",
+			"disabled": true
+		},
+		{
+			"key": "sessionId",
+			"value": "",
+			"disabled": true
+		},
+		{
+			"key": "secret",
+			"value": "",
+			"disabled": true
+		},
+		{
+			"key": "nitzapToken",
+			"value": "",
+			"disabled": true
+		},
+		{
+			"key": "tokenNitzap",
+			"value": "",
+			"disabled": true
+		},
+		{
+			"key": "destination",
+			"value": "",
+			"disabled": true
+		},
+		{
+			"key": "username",
+			"value": "5527999970208"
+		},
+		{
+			"key": "password",
+			"value": ""
+		}
+	]
+}
